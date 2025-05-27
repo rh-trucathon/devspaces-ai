@@ -1,0 +1,21 @@
+name: Local Assistant
+version: 1.0.0
+schema: v1
+models:
+  - name: ${{values.model}}
+    model: ${{values.model}}
+    apiBase: ${{values.maasURL}}
+    provider: ${{values.provider}}
+    apiKey: ${{values.apikey}}
+    roles:
+      - chat
+      - edit
+      - autocomplete
+context:
+  - provider: code
+  - provider: docs
+  - provider: diff
+  - provider: terminal
+  - provider: problems
+  - provider: folder
+  - provider: codebase

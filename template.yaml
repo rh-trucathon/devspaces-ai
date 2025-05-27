@@ -1,0 +1,42 @@
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: devspaces-for-ai
+  title: Devspaces for AI
+  description: Create a Devspaces with generative code 
+  tags:
+    - ai
+    - java
+spec:
+  owner: rhdh
+  type: service
+  parameters:
+    - title: Define your MaaS to use
+      required:
+        - maasURL
+        - model
+        - provider
+        - apikey
+      properties:
+        maasURL:
+          title: MaaS URL
+          type: string
+          default: https://maas.apps.prod.rhoai.rh-aiservices-bu.com
+        model:
+          title: Model
+          type: string 
+        provider:
+          title: Provider
+          type: string
+          default: openai
+        apikey:
+          title: API Key
+          type: string
+  steps:
+    - id: fetch-base
+      name: Fetch Base
+      action: fetch:template
+      input:
+        url: ./template
+        values:
+          name: ${{parameters.name}}
