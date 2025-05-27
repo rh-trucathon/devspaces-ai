@@ -65,3 +65,14 @@ commands:
           kill -15 ${node_server_pids} &>/dev/null && echo 'Done.'
       group:
         kind: run
+  - id: config-continue-extension
+    exec:
+      label: "Configure Continue"
+      component: tools
+      commandLine: "sed -i \"s/SOMETHING/$(oc get dw --sort-by=.metadata.creationTimestamp -o jsonpath='{.items[?(@.status.phase==\"Starting\")].metadata.name}')/\" /projects/*/src/main/resources/application.properties"
+      group:
+        kind: run
+        isDefault: true
+events:
+  postStart:
+    - config-continue-extension
