@@ -2,7 +2,7 @@ apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
   name: devspaces-for-ai
-  title: Devspaces for AI
+  title: Devspaces for AI 2
   description: Create a Devspaces with generative code 
   tags:
     - ai
@@ -77,7 +77,7 @@ spec:
       input:
         repoUrl: "${{ parameters.repo.host }}?owner=${{ parameters.repo.owner }}&repo=${{parameters.model}}"
         repoVisibility: public
-        
+
     - id: register
       name: Register
       action: catalog:register
