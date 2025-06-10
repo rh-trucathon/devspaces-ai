@@ -2,10 +2,14 @@ apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
   name: devspaces-for-ai
-  title: Devspaces for AI 9
+  title: Devspaces for AI 11
   description: Create a Devspaces with generative code 
   tags:
     - ai
+    - recommended
+    - java
+    - quarkus
+    - maven
 spec:
   owner: rhdh
   type: service
@@ -66,7 +70,6 @@ spec:
           model: ${{ parameters.model }}
           cluster: apps.cluster-tmw24.tmw24.sandbox3294.opentlc.com
           host: ${{ parameters.repo.host }}
-          destination: ${{ parameters.repo.owner }}/${{ parameters.model }}
           port: 8080
 
     - id: publish
