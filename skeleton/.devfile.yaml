@@ -69,7 +69,7 @@ commands:
     exec:
       label: "Configure Continue"
       component: tools
-      commandLine: "sed -i \"s/SOMETHING/$(oc get dw --sort-by=.metadata.creationTimestamp -o jsonpath='{.items[?(@.status.phase==\"Starting\")].metadata.name}')/\" /projects/*/src/main/resources/application.properties"
+      commandLine: "mkdir -p /home/user/.continue && cp /projects/devspaces-ai-continue/config-continue.yaml /home/user/.continue/"
       group:
         kind: run
         isDefault: true
