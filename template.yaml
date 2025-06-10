@@ -43,9 +43,9 @@ spec:
               title: Repo Host
               type: string
               description: Your SCM host
-              default: gitlab-gitlab.apps.cluster-bf7bx.bf7bx.sandbox72.opentlc.com
+              default: gitlab-gitlab.apps.cluster-tmw24.tmw24.sandbox3294.opentlc.com
               enum:
-                - gitlab-gitlab.apps.cluster-bf7bx.bf7bx.sandbox72.opentlc.com
+                - gitlab-gitlab.apps.cluster-tmw24.tmw24.sandbox3294.opentlc.com
             owner:
               title: Repo Owner
               type: string
@@ -66,7 +66,7 @@ spec:
           maasURL: ${{ parameters.maasURL}}
           owner: ${{ user.entity.metadata.name }}
           model: ${{ parameters.model }}
-          cluster: .apps.cluster-bf7bx.bf7bx.sandbox72.opentlc.com
+          cluster: apps.cluster-tmw24.tmw24.sandbox3294.opentlc.com
           host: ${{ parameters.repo.host }}
           destination: ${{ parameters.repo.owner }}/${{ parameters.model }}
           port: 8080
