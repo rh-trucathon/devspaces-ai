@@ -2,7 +2,7 @@ apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
   name: devspaces-for-ai
-  title: Devspaces for AI 8
+  title: Devspaces for AI 9
   description: Create a Devspaces with generative code 
   tags:
     - ai
@@ -58,8 +58,6 @@ spec:
       action: fetch:template
       input:
         url: ./skeleton
-        copyWithoutTemplating:
-          - .github/workflows/*
         values:
           apikey: ${{ parameters.apikey }}
           provider: ${{ parameters.provider }}
